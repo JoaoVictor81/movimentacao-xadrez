@@ -1,0 +1,302 @@
+
+#include <stdio.h>
+#include <locale.h>
+
+void esquerda(int move){
+    if (move > 0){
+        printf("esquerda\n");
+        esquerda(move - 1);
+    }
+}
+void direita(int move){
+    if (move > 0){
+        printf("direita\n");
+        direita(move - 1);
+    }
+}
+void cima(int move){
+    if (move > 0){
+        printf("cima\n");
+        cima(move - 1);
+    }
+}
+void baixo(int move){
+    if (move > 0){
+        printf("baixo\n");
+        baixo(move - 1);
+    }
+}
+
+
+void superior_esquerda(int move){
+    if (move > 0){
+        for (int i = 0; i < 1; i++){
+            printf("cima\n");
+            for (int j = 0; j < 1; j++){
+                printf("esquerda\n");
+            }
+        }
+        superior_esquerda(move - 1);
+    }
+}
+void superior_direita(int move){
+    if (move > 0){
+        for (int i = 0; i < 1; i++){
+            printf("cima\n");
+            for (int j = 0; j < 1; j++){
+                printf("direita\n");
+            }
+        }
+        superior_direita(move - 1);
+    }
+}
+void inferior_esquerda(int move){
+    if (move > 0){
+        for (int i = 0; i < 1; i++){
+            printf("baixo\n");
+            for (int j = 0; j < 1; j++){
+                printf("esquerda\n");
+            }
+        }
+        inferior_esquerda(move - 1);
+    }
+}
+void inferior_direita(int move){
+    if (move > 0){
+        for (int i = 0; i < 1; i++){
+            printf("baixo\n");
+            for (int j = 0; j < 1; j++){
+                printf("direita\n");
+            }
+        }
+        inferior_direita(move - 1);
+    }
+}
+
+
+
+void torre(){
+    int opcao;
+    int casas;
+    printf("deseja mover em qual direçao\n");
+    printf(" 1. esquerda \n 2. direita \n 3. cima \n 4. baixo\n");
+    scanf("%d",&opcao);
+    switch(opcao){
+    case 1:
+        printf("deseja mover quantas casas para a esquerda?\n");
+        scanf("%d",&casas);
+        esquerda(casas);
+        break;
+    case 2:
+        printf("deseja mover quantas casas para a direita?\n");
+        scanf("%d",&casas);
+        direita(casas);
+        break;
+    case 3:
+        printf("deseja mover quantas casas para a cima?\n");
+        scanf("%d",&casas);
+        cima(casas);
+        break;
+    case 4:
+        printf("deseja mover quantas casas para a baixo?\n");
+        scanf("%d",&casas);
+        baixo(casas);
+        break;
+    default:
+        break;
+    }
+}
+
+void bispo(){
+    int casas;
+    int opcao;
+
+    printf("deseja mover em qual direçao\n");
+    printf(" 1. superior esquerda \n 2. superior direita \n 3. inferior esquerda \n 4. inferior direita\n");
+    scanf("%d",&opcao);
+    switch(opcao){
+    case 1:
+        printf("deseja mover quantas casas para a superior esquerda?\n");
+        scanf("%d",&casas);
+        superior_esquerda(casas);
+        break;
+    case 2:
+        printf("deseja mover quantas casas para a superior direita?\n");
+        scanf("%d",&casas);
+        superior_direita(casas);
+        break;
+    case 3:
+        printf("deseja mover quantas casas para a inferior esquerda?\n");
+        scanf("%d",&casas);
+        inferior_esquerda(casas);
+        break;
+    case 4:
+        printf("deseja mover quantas casas para a inferior direita?\n");
+        scanf("%d",&casas);
+        inferior_direita(casas);
+        break;
+    default:
+        break;
+    }
+}
+
+void rainha(){
+    int casas;
+    int opcao;
+
+    printf("deseja mover em qual direçao\n");
+    printf(" 1. esquerda 2. direita  3. cima  4. baixo \n 5. superior esquerda 6. superior direita 7. inferior esquerda 8. inferior direita\n");
+    scanf("%d",&opcao);
+    switch(opcao){
+    case 1:
+        printf("deseja mover quantas casas para a esquerda?\n");
+        scanf("%d",&casas);
+        esquerda(casas);
+        break;
+    case 2:
+        printf("deseja mover quantas casas para a direita?\n");
+        scanf("%d",&casas);
+        direita(casas);
+        break;
+    case 3:
+        printf("deseja mover quantas casas para a cima?\n");
+        scanf("%d",&casas);
+        cima(casas);
+        break;
+    case 4:
+        printf("deseja mover quantas casas para a baixo?\n");
+        scanf("%d",&casas);
+        baixo(casas);
+        break;
+    case 5:
+        printf("deseja mover quantas casas para a superior esquerda?\n");
+        scanf("%d",&casas);
+        superior_esquerda(casas);
+        break;
+    case 6:
+        printf("deseja mover quantas casas para a superior direita?\n");
+        scanf("%d",&casas);
+        superior_direita(casas);
+        break;
+    case 7:
+        printf("deseja mover quantas casas para a inferior esquerda?\n");
+        scanf("%d",&casas);
+        inferior_esquerda(casas);
+        break;
+    case 8:
+        printf("deseja mover quantas casas para a inferior direita?\n");
+        scanf("%d",&casas);
+        inferior_direita(casas);
+        break;
+    default:
+        break;
+    }
+}
+
+void cavalo(){
+    int opcao, i, j;
+
+    printf("deseja mover em qual direçao\n");
+    printf(" 1. cima e esquerda 2. cima e direita  3. direita e cima \n 4. direita e baixo 5. baixo e direita 6. baixo e esquerda \n 7. esquerda e baixo 8. esquerda e cima\n");
+    scanf("%d",&opcao);
+
+    switch (opcao){
+    case 1:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("cima\n");
+            }
+            printf("esquerda\n");
+        }
+        break;
+    case 2:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("cima\n");
+            }
+            printf("direita\n");
+        }
+        break;
+    case 3:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("direita\n");
+            }
+            printf("cima\n");
+        }
+        break;
+    case 4:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("direita\n");
+            }
+            printf("baixo\n");
+        }
+        break;
+    case 5:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("baixo\n");
+            }
+            printf("direita\n");
+        }
+        break;
+    case 6:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("baixo\n");
+            }
+            printf("esquerda\n");
+        }
+        break;
+    case 7:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("esquerda\n");
+            }
+            printf("baixo\n");
+        }
+        break;
+    case 8:
+        for(i = 0; i < 1; i++){
+            for (j = 0; j < 2; j++){
+                printf("esquerda\n");
+            }
+            printf("cima\n");
+        }
+        break;
+    default:
+        break;
+    }
+}
+
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    
+int opcao;
+
+    printf("selecione a peça que voce deseja mover\n");
+    printf(" 1. torre \n 2. bispo \n 3. rainha \n 4. cavalo\n");
+    scanf("%d",&opcao);
+    switch (opcao){
+    case 1:
+        torre();
+        break;
+    case 2:
+        bispo();
+        break;
+    case 3:
+        rainha();
+        break;
+    case 4:
+        cavalo();
+        break;
+    default:
+        break;
+    }
+     
+ 
+    
+    return 0;
+}
